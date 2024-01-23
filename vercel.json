@@ -1,9 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "webapp/index.html", "use": "@vercel/static" },
-    { "src": "webservice/**", "use": "@vercel/node" }
-  ],
   "routes": [
     {
       "src": "/(.*)",

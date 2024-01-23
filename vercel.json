@@ -1,3 +1,17 @@
 {
-  "rewrites": [{ "source": "webapp/(.*)", "destination": "/" }]
+  "version": 2,
+  "builds": [
+    { "src": "webapp/**", "use": "@vercel/static" },
+    { "src": "webservice/**", "use": "@vercel/node" }
+  ],
+  "routes": [
+    {
+      "src": "/api/movies",
+      "dest": "/webservice/movies.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/webapp/$1"
+    }
+  ]
 }

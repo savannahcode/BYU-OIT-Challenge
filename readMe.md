@@ -1,11 +1,35 @@
-# Your Movie Search
+# vue-project
 
-### Welcome to YOUR Movie Search!
+This template should help get you started developing with Vue 3 in Vite.
 
-### To look for your movie of choice, and it's related information, please naviagte to this link: https://byu-oit-movie-search.vercel.app/
+## Recommended IDE Setup
 
-### To look for a movie, just type into the search bar & enter the movie you're looking for. You should be able to select how many movies you want to view at once, but you won't be able to view less than 10 at a time!
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Happy movie searching!
+## Customize configuration
 
-#### - Savannah Hilton
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```

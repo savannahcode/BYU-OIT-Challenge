@@ -1,35 +1,17 @@
-# vue-project
+# Your Movie Search
 
-This template should help get you started developing with Vue 3 in Vite.
+### Welcome to YOUR Movie Search!
 
-## Recommended IDE Setup
+### To look for your movie of choice, and it's related information, please naviagte to this link: https://byu-oit-movie-search.vercel.app/
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### My plan for this was... to look for a movie, you would just type into the search bar & enter the movie you're looking for. You should be able to select how many movies you want to view at once, but you won't be able to view less than 10 at a time!
 
-## Customize configuration
+### Unfortunately, with my lack of experience with Vue I ran out of time to get the project functional the way I wanted it to be. I have experience with making environment variables in Svelte, but not Vue. I tried for quite a while to get the env variables working, but that took up some time and I couldn't get it working. I also had my two folders webapp and webservies set up for coding, but in order to deploy to vercel, and since I wan't able to get to movie my back end files for the API calls to TMDB because I wanted to get it working in the same location fist before I separated them. I enjoyed learning more about how to use Vue vs Svlete and I would like to try experimenting with this project more in order to eventually get it working after my inital efforts have been reviewed.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### As for simple things I wanted to add, I want the movie posters to show data on the movie on hover. I also want to add a paginator for more browsing of movies. I also of course would get the search working.
 
-## Project Setup
+## Also I did filter the adult content, but I know Openheimer contains adult content and that movie is still listed, so that's a bit confusing.
 
-```sh
-npm install
-```
+## Happy movie searching!
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+#### - Savannah Hilton

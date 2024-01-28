@@ -1,12 +1,4 @@
 <script>
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'https://api.themoviedb.org/3/account/20940298',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyM2JmM2FmMmNhYjVhYTc4YTI4ODhjN2NmZjhmNjQyYiIsInN1YiI6IjY1YWYxMjg1Mzk3NTYxMDEwYzQ1ZmRkMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wRhpOHOnXUGxJcLCwFEMjRNZ6aYNhfHIUvpMstfjXkg'
-  }
-};
-
 export default {
   data() {
     return {
@@ -14,26 +6,13 @@ export default {
     };
   },
   methods: {
-    async fetchMovies() {
+    async getCleanMovieList() {
       try {
-        const response = await fetch('https://api.themoviedb.org/3/movie/popular', options);
-        const data = await response.json();
-        return data.results;
+        const response = await fetch("http://localhost:7700/movies");
+        this.cleanMovies = await response.json();
       } catch (err) {
         console.error(err);
       }
-    },
-    async getCleanMovieList() {
-      const movieList = await this.fetchMovies();
-      this.cleanMovies = movieList.filter(listedMovie => listedMovie.adult === false).reduce((acc, movie) => {
-        acc.push({
-          id: movie.id,
-          title: movie.title,
-          poster_path: movie.poster_path,
-          overview: movie.overview,
-        });
-        return acc;
-      }, [])
     },
   },
   created() {

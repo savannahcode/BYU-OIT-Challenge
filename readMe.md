@@ -16,6 +16,16 @@
 - You should enter a command that looks like this: `export MOVIE_AUTH_CODE=[insert code here]`
 - Try the steps to run the project again
 
+### Project View:
+
+#### Main Paige
+
+![main view](siteView.png)
+
+#### Search Page
+
+![search view](searchView.png)
+
 ### My Original Attempt:
 
 - I am used to Svelte, so with my lack of experience with Vue I ran out of time to get the project functional the way I wanted it to be on my first attmpt.

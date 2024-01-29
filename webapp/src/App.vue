@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -8,8 +10,8 @@ export default {
   methods: {
     async getCleanMovieList() {
       try {
-        const response = await fetch("http://localhost:7700/movies");
-        this.cleanMovies = await response.json();
+        const response = await axios.get("http://localhost:7700/movies");
+        this.cleanMovies = response.data;
       } catch (err) {
         console.error(err);
       }

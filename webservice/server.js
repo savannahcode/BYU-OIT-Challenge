@@ -41,7 +41,7 @@ app.get("/movies", async (req, res) => {
   try {
     const page = req.query.page || 1 // Use query parameter for page, default to 1
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`,
+      `https://api.themoviedb.org/3/movie/popular?include_adult=false&language=en-US&page=${page}`,
       options
     )
 
@@ -59,17 +59,6 @@ app.get("/movies", async (req, res) => {
     }))
 
     res.json(cleanMovies)
-  } catch (err) {
-    console.error(err)
-    res.status(500).json({ message: "Server error" })
-  }
-})
-
-app.get("/movies", async (req, res) => {
-  try {
-    const page = req.query.page || 1
-    // Existing route logic for popular movies
-    // ...
   } catch (err) {
     console.error(err)
     res.status(500).json({ message: "Server error" })

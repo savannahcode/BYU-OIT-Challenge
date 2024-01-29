@@ -28,7 +28,6 @@ app.use((req, res, next) => {
   })
 )
 */
-console.log(process.env.MOVIE_AUTH_CODE)
 
 const options = {
   method: "GET",
@@ -40,13 +39,16 @@ const options = {
 
 app.get("/movies", async (req, res) => {
   try {
+    const page = req.query.page || 1 // Use query parameter for page, default to 1
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`,
+      `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`,
       options
     )
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
+
     const data = await response.json()
 
     const cleanMovies = data.results.map((movie) => ({
@@ -55,8 +57,50 @@ app.get("/movies", async (req, res) => {
       poster_path: movie.poster_path,
       overview: movie.overview,
     }))
+
     res.json(cleanMovies)
-    console.log(cleanMovies)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ message: "Server error" })
+  }
+})
+
+app.get("/movies", async (req, res) => {
+  try {
+    const page = req.query.page || 1
+    // Existing route logic for popular movies
+    // ...
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ message: "Server error" })
+  }
+})
+
+app.get("/search", async (req, res) => {
+  try {
+    const query = req.query.query
+    const page = req.query.page || 1
+
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=${page}&query=${query}`,
+      options
+    )
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+
+    const data = await response.json()
+    const searchResults = data.results
+    console.log(query)
+    /*const searchResults = data.results.map((movie) => ({
+      id: movie.id,
+      title: movie.title,
+      poster_path: movie.poster_path,
+      overview: movie.overview,
+    }))
+*/
+    res.json(searchResults)
   } catch (err) {
     console.error(err)
     res.status(500).json({ message: "Server error" })
